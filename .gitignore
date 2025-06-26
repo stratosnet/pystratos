@@ -1,0 +1,17 @@
+*.pyc
+.coverage
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+__pycache__/
+htmlcov/
+site/
+*.egg-info/
+venv*/
+.python-version
+build/
+dist/
+*.egg
+*.log
+*.pyo
+*.pyd
