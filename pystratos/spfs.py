@@ -1,3 +1,4 @@
+import io
 import warnings
 from typing import IO, Union
 
@@ -54,7 +55,7 @@ class AsyncSpfsClient(AsyncIpfsClient):
         if self.fernet:
             file = (
                 self.fernet.encrypt(file.read())
-                if isinstance(file, IO)
+                if isinstance(file, io.IOBase)
                 else self.fernet.encrypt(file)
             )
         return await super().add(file, filename=filename)
