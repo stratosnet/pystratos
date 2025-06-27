@@ -8,6 +8,10 @@ Install Pystratos using pip:
 $ pip install pystratos
 ```
 
+## Documentation
+
+https://pystratos.readthedocs.io/en/latest/
+
 ## Usage examples
 
 Simple high-level interface for SPFS:
