@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pystratos"
-version = "0.1.0"
+version = "0.1.1"
 description = "A Python client library for interacting with Stratos APIs. ..."
 authors = ["m-bo-one <bogdankurinniy.dev1@gmail.com>"]
 readme = "README.md"

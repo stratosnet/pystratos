@@ -39,10 +39,11 @@ import asyncio
 import pystratos
 
 async def main():
-    async with pystratos.AsyncSpfsClient(timeout=10, encryption_key=b"wZcZyNXewdPeFdpv19SAlOTgfsM4aBY27ZKREReuFfM=") as client:
+    async with pystratos.AsyncSpfsClient(timeout=10) as client:
         with open("<your_file_path>", "rb") as f:
-            resp = await client.add(f, filename="test")
-            content = await client.cat(resp["Hash"])
+            encryption_key = b"wZcZyNXewdPeFdpv19SAlOTgfsM4aBY27ZKREReuFfM="
+            resp = await client.add(f, filename="test", encryption_key=encryption_key)
+            content = await client.cat(resp["Hash"], encryption_key=encryption_key)
             print(f"{content=}")
 
 

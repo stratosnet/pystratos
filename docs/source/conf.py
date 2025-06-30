@@ -9,7 +9,7 @@
 project = 'pystratos'
 copyright = '2025, Stratos'
 author = 'm-bo-one'
-release = '0.1.0'
+release = '0.1.1'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
