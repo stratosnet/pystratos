@@ -79,6 +79,7 @@ class AsyncSpfsClient(AsyncIpfsClient):
     async def cat(self, cid: str, encryption_key: bytes | None = None) -> bytes:
         """
         Retrieves a file from SPFS by its CID. If an encryption key is provided, the file will be decrypted after retrieval.
+
         :param cid: The Content Identifier (CID) of the file to retrieve.
         :param encryption_key: Optional encryption key for decrypting the file after retrieval. If provided, the file will be decrypted using this key.
         :return: The content of the file, either encrypted or decrypted based on the presence of an encryption key.

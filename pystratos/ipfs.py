@@ -52,8 +52,8 @@ class AsyncIpfsClient:
     async def add(
         self, file: Union[bytes, IO[bytes]], *, filename: str | None = None
     ) -> dict:
-        """
-        Adds a file to IPFS.
+        """Adds a file to IPFS.
+
         :param file: The file to add, either as bytes or a file-like object.
         :param filename: Optional name for the file in IPFS. If not provided, a random UUID will be used as the filename.
         :return: A dictionary containing the response from the IPFS API, typically including the CID (Content Identifier) of the added file.
@@ -69,7 +69,9 @@ class AsyncIpfsClient:
 
     async def cat(self, cid):
         """Retrieves a file from IPFS by its CID.
+
         :param cid: The Content Identifier (CID) of the file to retrieve.
+        :return: The content of the file as bytes.
         """
         params = {"arg": cid}
         response = await self._async_client.post(f"{self.base_url}/cat", params=params)
