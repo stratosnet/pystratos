@@ -14,7 +14,7 @@ https://pystratos.readthedocs.io/en/latest/
 
 ## Usage examples
 
-Simple high-level interface for SPFS:
+Simple high-level interface for SPFS to upload:
 
 ```pycon
 import asyncio
@@ -24,9 +24,25 @@ import pystratos
 async def main():
     async with pystratos.AsyncSpfsClient(timeout=10) as client:
         data = b"test data"
-        resp = await client.add(data, filename="test")
-        print(resp)
+        # upload the file
+        await client.add(data, filename="test")
 
+asyncio.run(main())
+```
+
+and for retrieving the file content:
+
+```pycon
+import asyncio
+
+import pystratos
+
+async def main():
+    async with pystratos.AsyncSpfsClient(timeout=10) as client:
+        cid = "Qmad1cvaBqojtaWW3ANjcEAYW7Zx8VKJeDGFxWTKPNivi1"
+        # retrieve the file content
+        content = await client.cat(cid, filename="test")
+        print(f"{content=}")
 
 asyncio.run(main())
 ```
